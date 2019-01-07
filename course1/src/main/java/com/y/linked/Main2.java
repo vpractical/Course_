@@ -1,4 +1,4 @@
-package com.y.second;
+package com.y.linked;
 
 public class Main2 {
 

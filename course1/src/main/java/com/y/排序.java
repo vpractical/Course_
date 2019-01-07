@@ -1,15 +1,17 @@
-package com.y.first;
+package com.y;
 
 import java.util.Arrays;
 
-public class Main1 {
+public class 排序 {
 
     public static void main(String[] args) {
         int[] arr = {1, 8, 2, 3, 7, 6, 4, 9, 5, 0};
         System.out.println(Arrays.toString(arr));
 //        bubbleSort(arr);
 //        quickSort(arr, 0, arr.length - 1);
-        mergeSort(arr,0,arr.length-1);
+//        mergeSort(arr,0,arr.length-1);
+//        insertSort(arr);
+        shellSort(arr, 4);
         System.out.println(Arrays.toString(arr));
         binarySearch(arr, 0, arr.length, 6);
         System.out.println("二分查找：循环：" + binarySearch2(arr, 0, arr.length, 6));
@@ -145,6 +147,39 @@ public class Main1 {
             array[k] = rightArray[j];
             k++;
             j++;
+        }
+    }
+
+    /**
+     * 直接插入排序
+     */
+    public static void insertSort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int j = i;
+            int target = array[j];
+            while (j > 0 && target < array[j - 1]) {
+                array[j] = array[j - 1];
+                j--;
+            }
+            array[j] = target;
+        }
+    }
+
+    /**
+     * 希尔排序
+     */
+    public static void shellSort(int[] array, int step) {
+        for (int k = 0; k < step; k++) {
+            //直接插入排序
+            for (int i = k + step; i < array.length; i = i + step) {
+                int j = i;
+                int target = array[j];
+                while (j > step - 1 && target < array[j - step]) {
+                    array[j] = array[j - step];
+                    j = j - step;
+                }
+                array[j] = target;
+            }
         }
     }
 

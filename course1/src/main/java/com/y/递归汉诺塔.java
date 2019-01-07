@@ -1,6 +1,6 @@
-package com.y.third;
+package com.y;
 
-public class Main3 {
+public class 递归汉诺塔 {
 
     public static void main(String... args) {
 

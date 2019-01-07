@@ -1,4 +1,4 @@
-package com.y.second;
+package com.y.linked;
 
 import java.util.ArrayList;
 import java.util.List;
